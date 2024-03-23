@@ -1,0 +1,29 @@
+{
+  "name": "team-api-interfaces",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/team/api-interfaces/src",
+  "projectType": "library",
+  "tags": ["type:util", "scope:team", "platform:any"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/team/api-interfaces"],
+      "options": {
+        "jestConfig": "libs/team/api-interfaces/jest.config.js"
+      }
+    },
+    "doc": {
+      "executor": "@nx/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx typedoc libs/team/api-interfaces --out docs/libs/team/api-interfaces"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -14,7 +14,24 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@linksmt-monorepo/counters": ["libs/counters/src/index.ts"],
+      "@linksmt-monorepo/linksmt-monorepo-commonlib": [
+        "libs/linksmt-monorepo-commonlib/src/index.ts"
+      ],
+      "@linksmt-monorepo/my-lib-gen-plugin": [
+        "libs/my-lib-gen-plugin/src/index.ts"
+      ],
+      "@linksmt-monorepo/my-lib-generator-plugin": [
+        "libs/my-lib-generator-plugin/src/index.ts"
+      ],
+      "@linksmt/common/tokens": ["libs/common/tokens/src/index.ts"],
+      "@linksmt/team/api-interfaces": ["libs/team/api-interfaces/src/index.ts"],
+      "@linksmt/team/controllers": ["libs/team/controllers/src/index.ts"],
+      "@linksmt/team/data-access": ["libs/team/data-access/src/index.ts"],
+      "@linksmt/team/team-list": ["libs/team/team-list/src/index.ts"],
+      "workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

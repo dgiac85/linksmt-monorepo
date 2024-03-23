@@ -1,0 +1,41 @@
+service: nx-linksmt-monorepo-firstapi
+
+frameworkVersion: '>=2.0.0'
+
+custom:
+  prune:
+    automatic: true
+    number: 3
+  serverless-layers:
+    dependenciesPath: ./apps/linksmt-monorepo-firstapi/package.json
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-central-1
+  deploymentBucket: nx-linksmt-monorepo-firstapi
+  apiGateway:
+    shouldStartNameWithService: true
+
+plugins:
+  - serverless-layers
+
+package:
+  individually: true
+  include:
+    - dist/apps/linksmt-monorepo-firstapi/**
+  exclude:
+    - '**'
+
+functions:
+  main:
+    handler: dist/apps/linksmt-monorepo-firstapi/main.handler
+    events:
+      - http:
+          cors: true
+          path: '/'
+          method: any
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any

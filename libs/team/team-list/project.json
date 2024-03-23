@@ -1,0 +1,20 @@
+{
+  "name": "team-team-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/team/team-list/src",
+  "prefix": "linksmt",
+  "tags": ["type:feature", "scope:team", "platform:web"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/team/team-list"],
+      "options": {
+        "jestConfig": "libs/team/team-list/jest.config.js"
+      }
+    }
+  }
+}

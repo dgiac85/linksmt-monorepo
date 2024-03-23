@@ -2,9 +2,9 @@
   "name": "linksmt-monorepo-firstapp",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "linksmt",
   "sourceRoot": "apps/linksmt-monorepo-firstapp/src",
-  "tags": [],
+  "tags": ["type:app", "scope:team", "platform:web"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
@@ -20,7 +20,9 @@
           "apps/linksmt-monorepo-firstapp/src/favicon.ico",
           "apps/linksmt-monorepo-firstapp/src/assets"
         ],
-        "styles": ["apps/linksmt-monorepo-firstapp/src/styles.scss"],
+        "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.css",
+        "apps/linksmt-monorepo-firstapp/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -49,13 +51,18 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "proxyConfig": "apps/linksmt-monorepo-firstapp/proxy.conf.json",
+        "buildTarget": "linksmt-monorepo-firstapp:build"
+      },
       "configurations": {
-        "production": {
-          "buildTarget": "linksmt-monorepo-firstapp:build:production"
-        },
         "development": {
           "buildTarget": "linksmt-monorepo-firstapp:build:development"
+        },
+        "production": {
+          "buildTarget": "linksmt-monorepo-firstapp:build:production"
         }
+
       },
       "defaultConfiguration": "development"
     },
@@ -71,6 +78,7 @@
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "dependsOn": ["^build","^test"],
       "options": {
         "jestConfig": "apps/linksmt-monorepo-firstapp/jest.config.ts"
       }

@@ -1,0 +1,16 @@
+{
+  "name": "linksmt-monorepo-secondapp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/linksmt-monorepo-secondapp/src",
+  "projectType": "application",
+  "tags": ["type:app", "scope:team", "platform:web"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/linksmt-monorepo-secondapp/jest.config.ts"
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "linksmt-monorepo-firstapi",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/linksmt-monorepo-firstapi/src",
+  "projectType": "application",
+  "tags": ["type:api", "scope:team", "platform:node"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node:execute",
+      "options": {
+        "buildTarget": "linksmt-monorepo-firstapi:build"
+      }
+    },
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/linksmt-monorepo-firstapi",
+        "main": "apps/linksmt-monorepo-firstapi/src/main.ts",
+        "tsConfig": "apps/linksmt-monorepo-firstapi/tsconfig.app.json",
+        "assets": ["apps/linksmt-monorepo-firstapi/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/linksmt-monorepo-firstapi/src/environments/environment.ts",
+              "with": "apps/linksmt-monorepo-firstapi/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/linksmt-monorepo-firstapi"],
+      "options": {
+        "jestConfig": "apps/linksmt-monorepo-firstapi/jest.config.js"
+      }
+    },
+    "deploy": {
+      "executor": "@nx/workspace:run-commands",
+      "options": {
+        "parallel": false,
+        "commands": [
+          {
+            "command": "npm run nx run linksmt-monorepo-firstapi:build:production"
+          },
+          {
+            "command": "sls deploy --config=apps/linksmt-monorepo-firstapi/serverless.yml --stage=prod"
+          }
+        ]
+      }
+    }
+  }
+}
