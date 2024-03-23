@@ -7,7 +7,7 @@ export type TeamDTO = {
     strength: number;
     speed: number;
     durability: number;
-    power: number;
+    power?: number;
     combat?: number;
   };
 };
