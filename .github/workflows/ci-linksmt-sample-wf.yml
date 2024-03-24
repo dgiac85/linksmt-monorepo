@@ -3,7 +3,7 @@ name: CI-linksmt-sample-WF
 on:
   push:
     branches:
-      - main
+      - test/nx-cloud
   pull_request:
 
 permissions:
