@@ -31,7 +31,7 @@ jobs:
           cache: 'npm'
       - uses: nrwl/nx-set-shas@v4
 
-      - run: git branch --track test/nx-cloud test/nx-cloud
+      - run: git branch --track test/nx-cloud origin/test/nx-cloud
 
       - run: npx nx-cloud record -- nx format:check
       - run: npx nx affected -t lint e2e build
