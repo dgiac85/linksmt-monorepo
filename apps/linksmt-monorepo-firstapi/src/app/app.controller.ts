@@ -8,7 +8,7 @@ export class AppController {
 
   @Get()
   getData() {
-    console.log('getData modificato');
+    console.log('getData modificato ancora per la pr');
     return this.appService.getData();
   }
 }
