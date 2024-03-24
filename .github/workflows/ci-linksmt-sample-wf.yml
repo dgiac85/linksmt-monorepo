@@ -7,8 +7,7 @@ on:
   pull_request:
 
 env:
-  NX_BRANCH: test/nx-cloud
-  NX_CI_EXECUTION_ID: 66005a77649d9743466e0e2e
+  NX_CI_EXECUTION_ENV: macos
 
 permissions:
   actions: read
