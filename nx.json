@@ -90,5 +90,5 @@
     },
     "@nx/angular:component": { "style": "scss", "prefix": "linksmt" }
   },
-  "nxCloudAccessToken": "ZWU3YWEwMmMtNmZhNi00NWQ4LWJkYTAtMzQ5NmI0NzZjMTUzfHJlYWQ="
+  "nxCloudAccessToken": "MzI5NjRiN2QtYWIzOS00ZTQ0LWJhMjctZjk5NjAyMGU4ZDU3fHJlYWQtd3JpdGU="
 }
