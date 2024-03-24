@@ -8,7 +8,7 @@ export class AppController {
 
   @Get()
   getData() {
-    console.log('getData modificato ancora per la pr');
+    console.log('getData PR 22:27');
     return this.appService.getData();
   }
 }
