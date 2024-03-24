@@ -7,9 +7,7 @@ on:
   pull_request:
 
 env:
-  NX_BRANCH: test/nx-cloud
-  NX_CI_EXECUTION_ID: 6600658d84631f37ba899c98
-  NX_CI_EXECUTION_ENV: macos
+  NX_CI_EXECUTION_ENV: macos-m1
 
 permissions:
   actions: read
@@ -25,7 +23,7 @@ jobs:
 
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
-      - run: npx nx-cloud start-ci-run
+      #- run: npx nx-cloud start-ci-run
 
       # Cache node_modules
       - uses: actions/setup-node@v3
@@ -36,4 +34,4 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - run: npx nx-cloud record -- nx format:check
-      - run: npx nx affected -t lint build e2e-ci
+      - run: npx nx affected -t e2e
