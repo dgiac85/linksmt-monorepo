@@ -80,6 +80,5 @@
       "library": { "style": "css", "linter": "eslint" }
     },
     "@nx/angular:component": { "style": "scss", "prefix": "linksmt" }
-  },
-  "nxCloudAccessToken": "ZWU3YWEwMmMtNmZhNi00NWQ4LWJkYTAtMzQ5NmI0NzZjMTUzfHJlYWQ="
+  }
 }
