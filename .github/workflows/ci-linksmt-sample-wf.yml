@@ -6,9 +6,6 @@ on:
       - test/nx-cloud
   pull_request:
 
-env:
-  NX_CI_EXECUTION_ENV: macos
-
 permissions:
   actions: read
   contents: read
