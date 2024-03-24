@@ -35,15 +35,8 @@
     "@nx/jest:jest": {
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-      "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
+      "options": { "passWithNoTests": true },
+      "configurations": { "ci": { "ci": true, "codeCoverage": true } }
     },
     "@nx/js:tsc": {
       "cache": true,
@@ -59,12 +52,7 @@
         "componentTestingTargetName": "component-test"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
     {
       "plugin": "@nx/webpack/plugin",
       "options": {
@@ -88,17 +76,10 @@
         "linter": "eslint",
         "bundler": "webpack"
       },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
+      "component": { "style": "css" },
+      "library": { "style": "css", "linter": "eslint" }
     },
-    "@nx/angular:component": {
-      "style": "scss",
-      "prefix": "linksmt"
-    }
-  }
+    "@nx/angular:component": { "style": "scss", "prefix": "linksmt" }
+  },
+  "nxCloudAccessToken": "MzI5NjRiN2QtYWIzOS00ZTQ0LWJhMjctZjk5NjAyMGU4ZDU3fHJlYWQtd3JpdGU="
 }
