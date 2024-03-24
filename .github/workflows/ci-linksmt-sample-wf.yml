@@ -33,5 +33,4 @@ jobs:
 
       - run: git branch --track test/nx-cloud origin/test/nx-cloud
 
-      - run: npx nx-cloud record -- nx format:check
       - run: npx nx affected -t lint e2e build
