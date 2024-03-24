@@ -21,6 +21,7 @@ jobs:
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
       #- run: npx nx-cloud start-ci-run
+      - run: npm ci
 
       # Cache node_modules
       - uses: actions/setup-node@v3
@@ -29,6 +30,8 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
+
+      - run: git branch --track test/nx-cloud test/nx-cloud
 
       - run: npx nx-cloud record -- nx format:check
       - run: npx nx affected -t lint build e2e
