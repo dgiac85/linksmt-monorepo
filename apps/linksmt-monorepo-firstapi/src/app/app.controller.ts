@@ -8,7 +8,7 @@ export class AppController {
 
   @Get()
   getData() {
-    console.log('getData modificato');
+    console.log('getData modificato e in questo caso faccio l\'affected al posto del run-many - Aggiornamento');
     return this.appService.getData();
   }
 }

@@ -8,7 +8,7 @@ import { linksmtMonorepoCommonlib as localHour } from '@linksmt-monorepo/linksmt
 export class AppComponent implements OnInit{
 
   get getHour(){
-    return 'LOCAL HOUR IS ' + localHour();
+    return 'LOCAL HOUR IS: ' + localHour();
   }
 
   ngOnInit(): void {
