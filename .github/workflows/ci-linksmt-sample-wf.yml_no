@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,7 +27,7 @@ jobs:
       # Cache node_modules
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18.15.0
           cache: 'npm'
       - uses: nrwl/nx-set-shas@v4
 
