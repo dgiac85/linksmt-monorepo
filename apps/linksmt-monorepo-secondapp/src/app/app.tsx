@@ -17,7 +17,7 @@ export function App() {
   return (
     <div>
       <div>LOCAL HOUR IS {localH}</div>
-      <NxWelcome title="linksmt-monorepo-secondapp" />
+      <NxWelcome title="linksmt-monorepo-secondapp!" />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
